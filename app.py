@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 import pickle
 import pandas as pd
-import numpy as np # Fixed: standard alias is np
+import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
 # loading data
@@ -12,6 +12,7 @@ df_popular = pickle.load(open('model/df_popular.pkl','rb'))
 
 app = Flask(__name__)
 
+#Routes
 @app.route('/')
 def index():
     return render_template(
